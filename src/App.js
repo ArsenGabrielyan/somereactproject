@@ -1,15 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import {Routes, Route} from "react-router-dom";
+import ActiveToDos from './components/activeitem';
+import CompletedToDos from './components/completeditemlist';
+import AddToDo from './components/additem';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Սա սովորական React.JS Պրոյեկտ է
-        </p>
-      </header>
+        <Routes>
+            <Route path="/" element={<ActiveToDos/>} />
+            <Route path="/completed" element={<CompletedToDos/>} />
+            <Route path="/add" element={<AddToDo/>} />
+        </Routes>
     </div>
   );
 }
